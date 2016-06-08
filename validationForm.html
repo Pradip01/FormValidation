@@ -1,10 +1,17 @@
 <html>
 <head>
+<style>
+select{
+    margin-bottom: 18px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://iamrohit.in/lab/js/location.js"></script>
 <script type="text/javascript">
 
 function validation()
 {
-	var a = document.form.name.value;
+    var a = document.form.name.value;
 if(a=="")
 {
 alert("Please Enter Your Name");
@@ -48,9 +55,10 @@ if(b.length != 10) {
 
 </script>
 
+
 </head>
 <body>
-<form name="form" method="post" onsubmit="return validation()">
+    <form name="form" method="post">
 <tr>
 <td> Your Name:</td>
 <td><input type="text" name="name" required></td>
@@ -64,12 +72,21 @@ Email :       <input type="email" name="email" required></br>
 <td></td></br>
  <input name="gender" type="radio" value="m" /> Male
     <input name="gender" type="radio" value="f" /> Female</br>
-
-
+</tr>
+<tr>
+            <select name="country" class="countries" id="countryId"></br>
+        <option value="">Select Country</option></br>
+        </select></br>
+        <select name="state" class="states" id="stateId"></br>
+        <option value="">Select State</option></br>
+        </select></br>
+        <select name="city" class="cities" id="cityId"></br>
+        <option value="">Select City</option>
+        </select> </br>
 </tr>
 
 
-<td><input type="submit" name="sub" value="Submit"></td>
+<td><input type="submit" name="sub" onsubmit="return validation()" value="Submit"></td>
 </form>
 </body>
 </html>
